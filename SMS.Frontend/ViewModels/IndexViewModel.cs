@@ -7,7 +7,26 @@ using System.Threading.Tasks;
 
 namespace SMS.Frontend.ViewModels
 {
-    public class IndexViewModel : Screen
+    public class IndexViewModel : Conductor<object>
     {
+        public IndexViewModel()
+        {
+            ActivateItem(new StudentsViewModel());
+        }
+
+        public void LoadPageStudents()
+        {
+            ActivateItem(new StudentsViewModel());
+        }
+
+        public void LoadPageReports()
+        {
+            ActivateItem(new StudentsViewModel());
+        }
+
+        public void LoadPageExams()
+        {
+            ActivateItem(new StudentsViewModel());
+        }
     }
 }

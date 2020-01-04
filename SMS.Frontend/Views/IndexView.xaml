@@ -28,9 +28,9 @@
                     </Button>
                 </StackPanel>
                 <StackPanel>
-                    <Button Margin="5" Style="{StaticResource MaterialDesignFlatButton}">Students</Button>
-                    <Button Margin="5" Style="{StaticResource MaterialDesignFlatButton}">Reports</Button>
-                    <Button Margin="5" Style="{StaticResource MaterialDesignFlatButton}">Examinations</Button>
+                    <Button Margin="5" x:Name="LoadPageStudents" Style="{StaticResource MaterialDesignFlatButton}">Students</Button>
+                    <Button Margin="5" x:Name="LoadPageReports" Style="{StaticResource MaterialDesignFlatButton}">Reports</Button>
+                    <Button Margin="5" x:Name="LoadPageExams" Style="{StaticResource MaterialDesignFlatButton}">Examinations</Button>
                 </StackPanel>
             </StackPanel>
             
@@ -57,26 +57,7 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="auto"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="Students" VerticalAlignment="Center"></TextBlock>
-                            <TextBox
-                                Width="180"
-                                Margin="0,0,10,0"
-                                Grid.Column="1"
-                                x:Name="CommentTextBox"
-                                materialDesign:TextFieldAssist.HasClearButton="True"
-                                >
-                                <materialDesign:HintAssist.Hint>
-                                    <StackPanel
-                                      Orientation="Horizontal"
-                                      Margin="-2 0 0 0">    
-                                        <materialDesign:PackIcon
-                                            Kind="Search" />
-                                        <TextBlock>
-                                            Student Name
-                                        </TextBlock>
-                                    </StackPanel>
-                                </materialDesign:HintAssist.Hint>
-                            </TextBox>
+                            <ContentControl x:Name="ActiveItem" />
                         </Grid>
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
