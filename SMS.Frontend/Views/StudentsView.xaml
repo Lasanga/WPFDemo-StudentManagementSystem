@@ -17,7 +17,7 @@
             <TextBox
                     Width="180"
                     Grid.Column="1"
-                    x:Name="CommentTextBox"
+                    x:Name="SearchStudent"
                     materialDesign:TextFieldAssist.HasClearButton="True">
                 <materialDesign:HintAssist.Hint>
                     <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">

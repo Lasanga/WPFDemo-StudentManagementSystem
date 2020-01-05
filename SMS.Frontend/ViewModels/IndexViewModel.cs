@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using SMS.Service.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,24 +10,29 @@ namespace SMS.Frontend.ViewModels
 {
     public class IndexViewModel : Conductor<object>
     {
-        public IndexViewModel()
+        private readonly IStudentService _studentService;
+        private StudentsViewModel _studentsViewModel;
+
+        public IndexViewModel(IStudentService studentService, StudentsViewModel studentsViewModel)
         {
-            ActivateItem(new StudentsViewModel());
+            _studentService = studentService;
+            _studentsViewModel = studentsViewModel;
+            ActivateItem(_studentsViewModel);
         }
 
         public void LoadPageStudents()
         {
-            ActivateItem(new StudentsViewModel());
+            //ActivateItem(new StudentsViewModel());
         }
 
         public void LoadPageReports()
         {
-            ActivateItem(new StudentsViewModel());
+           // ActivateItem(new StudentsViewModel());
         }
 
         public void LoadPageExams()
         {
-            ActivateItem(new StudentsViewModel());
+            //ActivateItem(new StudentsViewModel());
         }
     }
 }

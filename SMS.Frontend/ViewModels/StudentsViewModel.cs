@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using SMS.Frontend.Model;
+using SMS.Service.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,12 @@ namespace SMS.Frontend.ViewModels
 {
     public class StudentsViewModel : Screen
     {
-        public StudentsViewModel()
+        private readonly IStudentService _studentService;
+
+        public StudentsViewModel(IStudentService studentService)
         {
+            _studentService = studentService;
+
             Students.Add(new StudentDto { Id = 1, Age = 20, FirstName = "Lasanga", SecondName = " Guruge", FullName = "Lasanga Guruge", Grade = 10 });
             Students.Add(new StudentDto { Id = 2, Age = 21, FirstName = "Ravindu", SecondName = " Guruge", FullName = "Ravindu Guruge", Grade = 11 });
             Students.Add(new StudentDto { Id = 3, Age = 30, FirstName = "Loku", SecondName = " Bro", FullName = "Loku Bro", Grade = 15 });
@@ -45,5 +50,16 @@ namespace SMS.Frontend.ViewModels
         {
 
         }
+
+        private string _searchStudent;
+
+        public string SearchStudent
+        {
+            get { return _searchStudent; }
+            set {
+                var ss = _studentService.GetAllStudents();
+                _searchStudent = value; }
+        }
+
     }
 }
